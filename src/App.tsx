@@ -30,6 +30,9 @@ function App() {
       <Button onClick={() => dispatch(authSlice.actions.logout())}>
         Logout
       </Button>
+      <Button onClick={() => dispatch(authSlice.actions.sampleError())}>
+        Throw Error
+      </Button>
     </MantineProvider>
   )
 }

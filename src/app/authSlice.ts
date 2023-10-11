@@ -16,6 +16,9 @@ const authSlice = createSlice({
     logout: (state) => {
       state.user = null
     },
+    sampleError: () => {
+      throw Error("Example error in reducer")
+    },
   },
   extraReducers: (builder) => {
     builder.addMatcher(
@@ -23,7 +26,7 @@ const authSlice = createSlice({
       (state, { payload }) => {
         state.user = payload.user
 
-        throw Error("Example error")
+        throw Error("Example error in addMatcher")
       },
     )
   },
